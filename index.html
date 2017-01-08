@@ -13,12 +13,19 @@
       <li>If you guess incorrectly, you get a point for each card in the discard pile, then those cards are cleared and your guesses start over at 0.</li>
       <li>Winner is the person with the fewest points when the cards run out.</li>
     </ul>
+    <p>Notes:</p>
+    <ul>
+      <li>Aces are low (they count as "1").</li>
+      <li>Drawing the same card as the previous card doesn't count as right or wrong, but does add one point to the discard pile.</li>
+    </ul>
     <button id="newGame">New Game</button>
     <div>
       <p>Cards remaining: <span id="remaining"></span></p>
+      <button class="next" id="higher">Higher</button>
+      <button class="next" id="lower">Lower</button>
+      <p>Guess: <span id="guess"></span></p>
+      <p>Answer:<span id="answer"></span></p>
       <p>Current Card:</p>
-      <button class="next" id="higher">Next Card</button>
-      <button class="next" id="lower">Next Card</button>
       <div id="current"></div>
 
     </div>
