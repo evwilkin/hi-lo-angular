@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hi-Lo Guessing Game</title>
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+    <h1>Hi-Lo</h1>
+    <h2>A guessing game</h2>
+    <p>To play, the dealer will draw the first card from a deck. Your goal is to guess if the next card will be higher or lower than that card.</p>
+    <ul>
+      <li>Guess correctly 3 times in a row and you can choose to swap roles with the dealer or keep guessing.</li>
+      <li>If you guess incorrectly, you get a point for each card in the discard pile, then those cards are cleared and your guesses start over at 0.</li>
+      <li>Winner is the person with the fewest points when the cards run out.</li>
+    </ul>
+    <button id="newGame">New Game</button>
+    <div>
+      <p>Cards remaining: <span id="remaining"></span></p>
+      <p>Current Card:</p>
+      <button class="next" id="higher">Next Card</button>
+      <button class="next" id="lower">Next Card</button>
+      <div id="current"></div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="scratch.js"></script>
+  </body>
+</html>
