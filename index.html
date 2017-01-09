@@ -13,55 +13,62 @@
       <h1>Hi-Lo</h1>
       <h2>A guessing game</h2>
     </header>
-    <section id="nav">
-      <button id="newGame">New Game</button>
-      <h3>Rules</h3>
-    </section>
-    <section id="rules">
-      <p>To play, the dealer will draw a card from the deck. Your goal is to guess if the next card will be higher or lower than that card.</p>
-      <ul>
-        <li>Guess correctly 3 times in a row and you can choose to pass play to the other player or keep guessing.</li>
-        <li>If you guess incorrectly you get a point for each card in the discard pile, then those cards are cleared.</li>
-        <li>Winner is the person with the fewest points when the cards run out.</li>
-      </ul>
-      <p>Notes:</p>
-      <ul>
-        <li>Aces are low (they count as "1").</li>
-        <li>Drawing the same card as the previous card doesn't count as a correct or incorrect guess, but does add one point to the discard pile.</li>
-      </ul>
-      <hr />
-    </section>
-    <section id="game">
-      <div id="score">
+    <div class="container">
+      <section id="nav">
+        <button id="newGame">New Game</button>
         <div>
-          <p>Player 1:</p>
-          <div id="player1">0</div>
+          <h3>Rules</h3>
         </div>
-        <div>
-          <p>Player 2:</p>
-          <div id="player2">0</div>
+      </section>
+      <section id="rules">
+        <p>To play, the dealer will draw a card from the deck. Your goal is to guess if the next card will be higher or lower than that card.</p>
+        <ul>
+          <li>Guess correctly 3 times in a row and you can choose to pass play to the other player or keep guessing.</li>
+          <li>If you guess incorrectly you get a point for each card in the discard pile, then those cards are cleared.</li>
+          <li>Winner is the person with the fewest points when the cards run out.</li>
+        </ul>
+        <p>Notes:</p>
+        <ul>
+          <li>Aces are low (they count as "1").</li>
+          <li>Drawing the same card as the previous card doesn't count as a correct or incorrect guess, but does add one point to the discard pile.</li>
+        </ul>
+        <hr />
+      </section>
+      <section id="game">
+        <div id="score">
+          <div class="playerScore turn">
+            <p>Player 1:</p>
+            <div id="player1">0</div>
+          </div>
+          <div class="playerScore">
+            <p>Player 2:</p>
+            <div id="player2">0</div>
+          </div>
         </div>
-      </div>
-      <div id="cards">
-        <div id="current"></div>
-        <div id="card">
-          <p class="lastCard">Previous Card:</p>
-          <div class="lastCard" id="previous"></div>
-          <p class="lastCard">Discard Pile:</p>
-          <div class="lastCard" id="discard"></div>
-          <p>Cards remaining:</p>
-          <div id="remaining"></div>
+        <div id="cards">
+          <div id="current"></div>
+          <div id="pile">
+            <p class="lastCard">Previous Card:</p>
+            <div class="lastCard" id="previous"></div>
+            <p class="lastCard">Discard: <span id="discard"></span></p>
+            <p>Remaining: <span id="remaining"></span></p>
+          </div>
         </div>
-      </div>
-      <div id="answer"></div>
-      <div id="buttons">
-        <button class="next" id="higher">Higher</button>
-        <button class="next" id="trade">Pass</button>
-        <button class="next" id="lower">Lower</button>
-      </div>
-    </section>
+        <div id="answer"><p></p></div>
+      </section>
+      <section id="controls">
+        <div id="buttons">
+          <button class="next" id="higher">Higher</button>
+          <button class="next" id="pass">Pass</button>
+          <button class="next" id="lower">Lower</button>
+        </div>
+        <div id="gameOver">
+          <h3>Game Over</h3>
+        </div>
+      </section>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
-    <script src="scratch.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
