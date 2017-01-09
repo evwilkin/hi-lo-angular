@@ -69,6 +69,8 @@ $(document).ready(function() {
     $player2.html(score2);
     $previousImg.html("");
     $currentImg.html("");
+    $("#score div:first-child").addClass("turn");
+    $("#score div:last-child").removeClass("turn");
     //Get a new deck of cards
     $.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1', function(res) {
       deckID = res.deck_id;
@@ -177,11 +179,6 @@ $(document).ready(function() {
     },
     function(accept) {
       if (accept) {
-        //Reset display of turn to first player if needed
-        if ($("#score:last-child").hasClass("turn")) {
-          $("#score:last-child").removeClass("turn");
-          $("#score:first-child").addClass("turn");
-        }
         newGame();
       } else {
         $buttons.hide();
