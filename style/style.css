@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  height: 100vh;
+  background-color: #e5e5e5;
+}
+
+header {
+  font-family: 'Bungee Shade', cursive;
+  color: #094978;
+  background-color: #f9584f;
+  padding: 3% 0;
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.nav:hover {
+  background-color: #315ea5;
+}
+
+#nav {
+  height: 10%;
+  font-size: 1.5em;
+  background-color: #094978;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#rules {
+  text-align: left;
+  font-size: 1.3em; 
+}
+
+#nav button, #nav h3, .next {
+  color: #f9584f;
+  font-size: 1.2em;
+  font-weight: normal;
+  padding: 4%;
+}
+
+.next {
+  background-color: #094978;
+  font-size: 2em;
+  max-width: 48%;
+  height: auto;
+  border: none;
+}
+
+#game {
+  max-width: 95%;
+  margin: 0 auto;
+  height: 75%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#score {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+#current {
+  width: 70%;
+}
+
+#card {
+  width: 30%;
+  height: auto;
+}
+
+#cards img {
+  max-width: 100%;
+  height: auto;
+}
+
+#cards p {
+  margin: 0.5em 0;
+}
+
+#buttons {
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+}
+
+#trade {
+  color: #094978;
+  background-color: #f9584f;
+}
+
+@media (min-width: 800px) {
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+
+}
