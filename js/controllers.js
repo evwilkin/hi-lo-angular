@@ -152,7 +152,7 @@ angular.module('HiLoCtrls', ['HiLoServices'])
     if ($scope.score1 < $scope.score2) {
       message = "<h3>Congratulations Player 1 - you win!</h3><p>Final Score:</p><br /><p>Player 1: " + $scope.score1 + "</p><p>Player 2: " + $scope.score2 + "</p><br />";
     } else if ($scope.score2 < $scope.score1) {
-      message = "<h3>Congratulations Player 2 - you win!</h3><p>Final Score:</p><p>Player 1: " + $scope.score1 + "</p><p>Player 2: " + $scope.score2 + "</p>";
+      message = "<h3>Congratulations Player 2 - you win!</h3><p>Final Score:</p><br /><p>Player 1: " + $scope.score1 + "</p><p>Player 2: " + $scope.score2 + "</p><br />";
     } else {
       message = "<h3>It's a tie!</h3>";
     }
