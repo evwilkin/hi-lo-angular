@@ -175,6 +175,8 @@ button:focus {
   flex: 1;
 }
 
+// MEDIA QUERIES //
+
 @media (min-width: 600px) {
 
   #current, #pile {
