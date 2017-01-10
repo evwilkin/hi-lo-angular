@@ -60,7 +60,8 @@
               <img ng-src="{{ lastCard.img }}" />
             </div>
             <p class="lastCard">Discard: <span id="discard">{{ discard }}</span></p>
-            <p>Remaining: <span id="remaining">{{ remainingCards }}</span></p>
+            <p ng-show="remainingCards">Remaining: <span id="remaining">{{ remainingCards }}</span></p>
+            <h3 ng-hide="remainingCards" id="gameOver">Game Over</h3>
           </div>
         </div>
         <div id="answer"><p>{{ answer }}</p></div>
@@ -70,9 +71,6 @@
           <button ng-click="drawCard('higher')" class="next" id="higher">Higher</button>
           <button ng-click="pass()" ng-show="correctGuesses >= 3" class="next" id="pass">Pass</button>
           <button ng-click="drawCard('lower')" class="next" id="lower">Lower</button>
-        </div>
-        <div ng-hide="remainingCards !== '0'" id="gameOver">
-          <h3 id="gameOver">Game Over</h3>
         </div>
       </section>
     </div>
