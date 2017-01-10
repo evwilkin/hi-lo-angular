@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="HiLo">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hi-Lo Guessing Game</title>
@@ -7,20 +7,25 @@
     <link rel="stylesheet" href="style/sweetalert.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
   </head>
   <body>
     <header>
       <h1>Hi-Lo</h1>
       <h2>A guessing game</h2>
     </header>
-    <div class="container">
+    <div ng-controller="GameCtrl" class="container">
       <section id="nav">
-        <button id="newGame">New Game</button>
+        <button ng-click="newGame()" id="newGame">New Game</button>
         <div>
-          <h3>Rules</h3>
+          <h3 ng-click="rules = !rules">Rules</h3>
         </div>
       </section>
-      <section id="rules">
+      <section ng-show="rules" id="rules">
         <p>To play, the dealer will draw a card from the deck. Your goal is to guess if the next card will be higher or lower than that card.</p>
         <ul>
           <li>Guess correctly 3 times in a row and you can choose to pass play to the other player or keep guessing.</li>
@@ -38,37 +43,38 @@
         <div id="score">
           <div class="playerScore">
             <p>Player 1:</p>
-            <div id="player1">0</div>
+            <div id="player1">{{ score1 }}</div>
           </div>
           <div class="playerScore">
             <p>Player 2:</p>
-            <div id="player2">0</div>
+            <div id="player2">{{ score2 }}</div>
           </div>
         </div>
         <div id="cards">
-          <div id="current"></div>
+          <div id="current">
+            <img ng-src="{{ currentCard.img }}" />
+          </div>
           <div id="pile">
-            <p class="lastCard">Previous Card:</p>
-            <div class="lastCard" id="previous"></div>
-            <p class="lastCard">Discard: <span id="discard"></span></p>
-            <p>Remaining: <span id="remaining"></span></p>
+            <p ng-show="correctGuesses" class="lastCard">Previous Card:</p>
+            <div ng-show="correctGuesses" class="lastCard" id="previous">
+              <img ng-src="{{ lastCard.img }}" />
+            </div>
+            <p class="lastCard">Discard: <span id="discard">{{ discard }}</span></p>
+            <p>Remaining: <span id="remaining">{{ remainingCards }}</span></p>
           </div>
         </div>
-        <div id="answer"><p></p></div>
+        <div id="answer"><p>{{ answer }}</p></div>
       </section>
-      <section id="controls">
+      <section ng-show="remainingCards" id="controls">
         <div id="buttons">
-          <button class="next" id="higher">Higher</button>
-          <button class="next" id="pass">Pass</button>
-          <button class="next" id="lower">Lower</button>
+          <button ng-click="drawCard('higher')" class="next" id="higher">Higher</button>
+          <button ng-click="pass()" ng-show="correctGuesses >= 3" class="next" id="pass">Pass</button>
+          <button ng-click="drawCard('lower')" class="next" id="lower">Lower</button>
         </div>
-        <div id="gameOver">
-          <h3>Game Over</h3>
+        <div ng-hide="remainingCards !== '0'" id="gameOver">
+          <h3 id="gameOver">Game Over</h3>
         </div>
       </section>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
-    <script src="js/script.js"></script>
   </body>
 </html>

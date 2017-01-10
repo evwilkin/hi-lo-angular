@@ -1,4 +1,6 @@
-$(document).ready(function() {
+var app = angular.module('HiLo', ['HiLoCtrls']);
+
+/*$(document).ready(function() {
   
   //Declare variables
   var deckID,
@@ -219,4 +221,4 @@ $(document).ready(function() {
     $pass.hide();
   }
 
-});
+});*/
