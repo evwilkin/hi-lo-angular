@@ -1,5 +1,7 @@
 # Hi-Lo
-Higher/lower guessing game implemented with JavaScript.  
+Higher/lower guessing game implemented with Angular.  
+* [View the jQuery version here](https://github.com/evwilkin/hi-lo "Hi-Lo Game w/jQuery")
+
 ### Rules:
  - The dealer will draw a card from the deck. Your goal is to guess if the next card will be higher or lower than that card.
  - Guess correctly 3 times in a row and you can choose to pass play to the other player or keep guessing.
@@ -13,10 +15,9 @@ Higher/lower guessing game implemented with JavaScript.
  - HTML5
  - CSS3
  - JavaScript
- - jQuery (focus)
- - Flexbox (focus)
+ - Angular (focus)
 
-I utilized this exercise as a chance to build an app completely with jQuery, as a refresher for myself as it has been a while since I fully utilized jQuery instead of a more modern tool such as Angular or simply plain vanilla JavaScript.
+This game is a continuation of my original Hi-Lo game implemented with jQuery (link above).  When creating the original I intentionally utilized solely jQuery as a refresher and a way to focus on a single technology, but realized quickly the advantages that Angular's 2-way data binding would afford in syncing data between the model and view with every turn.
 
 I also wanted a chance to utilize Flexbox in my page layout, and found it useful through this entire app.  I have plenty of practice with Flexbox but little practical usage, and found applying it as easy as I had hoped - I find it truly a valuable tool for quick and easy responsive layouts without having to load an external library or framework.
 
@@ -26,9 +27,9 @@ I started by creating a mobile-first wireframe in Adobe Xd to plan out the posit
 (https://raw.githubusercontent.com/evwilkin/hi-lo/master/iPhone%2067%20%E2%80%93%201.png)
 
 ### Next Steps
- I plan to recreate this game using both Angular and React.  There were many many times when changing variables that I wished jQuery would take care of updating the view, but had to create an extra step to handle this.  I look forward to comparing the Angular code to the jQuery code to see how it compares in length, though I know the convenience of two-way data binding will be a welcome convenience.
+With the game logic complete in both jQuery and Angular, I look forward to cleaning up the extra HTML to slim it down to just what's required for the Angular code.  Once this is complete, I look forward to refactoring the code one more time to use React.  
 
-React has been next on my "to-learn" list for some time, and while I've had some classroom study and workshops on it I look forward to confirming my knowledge in recreating a simple and familiar game with it.
+Having studied React I have an understanding of the basics but am looking forward to confirming my knowledge in recreating a simple and familiar game with it.
 
 ### Bugs
  - Sweetalert loads too wide on mobile.
