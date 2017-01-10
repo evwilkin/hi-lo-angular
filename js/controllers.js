@@ -1,5 +1,7 @@
 angular.module('HiLoCtrls', ['HiLoServices'])
 .controller('GameCtrl', ['$scope', '$http', 'Cards', '$q', function($scope, $http, Cards, $q) {
+  
+  //Declare variables
   $scope.cards = [ 'ACE', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'JACK', 'QUEEN', 'KING'];
   $scope.correctGuesses = 0;
   $scope.player1 = true;
@@ -58,7 +60,7 @@ angular.module('HiLoCtrls', ['HiLoServices'])
   //Start game on load
   $scope.newGame();
 
-
+  //Declare functions
   function checkGuess(guess) {
     var current = $scope.cards.indexOf($scope.currentCard.val);
     var previous = $scope.cards.indexOf($scope.lastCard.val);

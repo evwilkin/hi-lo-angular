@@ -41,11 +41,11 @@
       </section>
       <section id="game">
         <div id="score">
-          <div class="playerScore">
+          <div ng-class="{ turn : player1 }" class="playerScore">
             <p>Player 1:</p>
             <div id="player1">{{ score1 }}</div>
           </div>
-          <div class="playerScore">
+          <div ng-class="{ turn : !player1 }" class="playerScore">
             <p>Player 2:</p>
             <div id="player2">{{ score2 }}</div>
           </div>
